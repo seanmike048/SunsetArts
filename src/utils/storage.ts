@@ -2,6 +2,8 @@
  * Secure storage utility for API keys and user settings
  */
 
+import { config } from '../config/config';
+
 const STORAGE_PREFIX = 'sunset_art_lens_';
 
 interface AppSettings {
@@ -30,7 +32,7 @@ export const storage = {
         const storedKey = localStorage.getItem(`${STORAGE_PREFIX}api_key`);
         if (storedKey) return deobfuscate(storedKey);
 
-        const envKey = import.meta.env.VITE_GEMINI_API_KEY as string | undefined;
+        const envKey = config.apiKey;
         return envKey?.trim() ? envKey : null;
     },
 
