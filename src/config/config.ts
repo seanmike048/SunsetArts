@@ -5,7 +5,7 @@
 export const config = {
     // API Configuration
     apiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
-    geminiApiEndpoint: 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent',
+    geminiApiEndpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent',
 
     // Image Processing
     maxImageSize: 800,
